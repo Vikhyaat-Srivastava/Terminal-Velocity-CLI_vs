@@ -1,6 +1,6 @@
 [build-system]
 requires = ["setuptools>=64"]
-build-backend = "setuptools.backends._legacy:_Backend"
+build-backend = "setuptools.build_meta"
 
 [project]
 name = "repopilot"
@@ -17,7 +17,6 @@ classifiers = [
     "Development Status :: 3 - Alpha",
     "Environment :: Console",
     "Intended Audience :: Developers",
-    "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3.8",
@@ -33,3 +32,6 @@ repopilot = "repopilot.cli:main"
 
 [project.urls]
 Homepage = "https://github.com/yashtripathi1517/Terminal-Velocity-CLI"
+
+[tool.setuptools.packages.find]
+include = ["repopilot*"]
