@@ -5,14 +5,14 @@ build-backend = "setuptools.backends._legacy:_Backend"
 [project]
 name = "repopilot"
 version = "0.1.0"
-description = "CLI tools for developer workflows — clean stale branches, fast."
+description = "CLI tools for developer workflows — setup, env, clean, logs."
 readme = "README.md"
 license = "MIT"
 requires-python = ">=3.8"
 authors = [
     { name = "Team RepoPilot" },
 ]
-keywords = ["git", "cli", "developer-tools", "branches", "cleanup"]
+keywords = ["git", "cli", "developer-tools", "environment", "logs", "setup", "cleanup"]
 classifiers = [
     "Development Status :: 3 - Alpha",
     "Environment :: Console",
@@ -32,4 +32,4 @@ classifiers = [
 repopilot = "repopilot.cli:main"
 
 [project.urls]
-Homepage = "https://github.com/repopilot/repopilot"
+Homepage = "https://github.com/yashtripathi1517/Terminal-Velocity-CLI"
