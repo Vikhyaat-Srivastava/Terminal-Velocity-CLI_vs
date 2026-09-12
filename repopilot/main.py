@@ -14,18 +14,13 @@ Shared conventions:
 import argparse
 import sys
 
-from commands import env
-
-# Add teammate modules here as they become available:
-# from commands import setup
-# from commands import clean
-# from commands import logs
+from repopilot.commands import setup, env, clean, logs
 
 COMMAND_MODULES = [
+    setup,
     env,
-    # setup,
-    # clean,
-    # logs,
+    clean,
+    logs,
 ]
 
 
@@ -45,9 +40,10 @@ def main(argv=None):
         parser.print_help(file=sys.stderr)
         return 1
 
-    # Each module sets a 'func' default on its subparser
-    if hasattr(args, "func"):
-        return args.func(args)
+    # Each module sets a 'handler' default on its subparser
+    if hasattr(args, "handler"):
+        code = args.handler(args)
+        sys.exit(code or 0)
 
     parser.print_help(file=sys.stderr)
     return 1

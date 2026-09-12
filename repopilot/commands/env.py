@@ -309,19 +309,19 @@ def register(subparsers):
         default="auto",
         help="Target shell syntax for exported variables (default: auto)"
     )
-    switch_p.set_defaults(func=handle_switch)
+    switch_p.set_defaults(handler=handle_switch)
 
     # env list
     list_p = env_sub.add_parser("list", help="List all available environments")
-    list_p.set_defaults(func=handle_list)
+    list_p.set_defaults(handler=handle_list)
 
     # env current
     current_p = env_sub.add_parser("current", help="Show currently active environment")
-    current_p.set_defaults(func=handle_current)
+    current_p.set_defaults(handler=handle_current)
 
     def dispatch(args):
         if not getattr(args, "env_subcommand", None):
             return user_error("env", "Missing subcommand (switch, list, or current)")
-        return args.func(args)
+        return args.handler(args)
 
-    env_parser.set_defaults(func=dispatch)
+    env_parser.set_defaults(handler=dispatch)

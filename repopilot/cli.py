@@ -6,14 +6,14 @@ import argparse
 import sys
 
 from repopilot import __version__
-from repopilot.commands import clean
+from repopilot.commands import setup, env, clean, logs
 
 
 def build_parser() -> argparse.ArgumentParser:
     """Build the top-level argument parser and register all subcommands."""
     parser = argparse.ArgumentParser(
         prog="repopilot",
-        description="CLI tools for developer workflows.",
+        description="CLI tools for developer workflows — setup, env, clean, logs.",
     )
     parser.add_argument(
         "--version",
@@ -27,8 +27,11 @@ def build_parser() -> argparse.ArgumentParser:
         description="Run 'repopilot <command> --help' for details on a specific command.",
     )
 
-    # Register subcommands
+    # Register all subcommands
+    setup.register(subparsers)
+    env.register(subparsers)
     clean.register(subparsers)
+    logs.register(subparsers)
 
     return parser
 
@@ -42,8 +45,8 @@ def main(argv: list[str] | None = None) -> None:
         parser.print_help()
         sys.exit(0)
 
-    if hasattr(args, "func"):
-        code = args.func(args)
+    if hasattr(args, "handler"):
+        code = args.handler(args)
         sys.exit(code or 0)
     else:
         parser.print_help()

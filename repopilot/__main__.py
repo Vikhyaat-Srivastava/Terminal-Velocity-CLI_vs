@@ -1,4 +1,4 @@
-"""Allow running repopilot as `python -m repopilot`."""
+"""Allow running repopilot as `python -m repopilot` or `python -m repopilot.main`."""
 
 from repopilot.cli import main
 
