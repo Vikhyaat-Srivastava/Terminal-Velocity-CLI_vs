@@ -1,0 +1,14 @@
+README.md
+pyproject.toml
+repopilot/__init__.py
+repopilot/main.py
+repopilot.egg-info/PKG-INFO
+repopilot.egg-info/SOURCES.txt
+repopilot.egg-info/dependency_links.txt
+repopilot.egg-info/entry_points.txt
+repopilot.egg-info/top_level.txt
+repopilot/commands/__init__.py
+repopilot/commands/clean.py
+repopilot/commands/env.py
+repopilot/commands/logs.py
+repopilot/commands/setup.py
