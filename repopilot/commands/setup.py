@@ -49,7 +49,7 @@ DEPENDENCY_MAP = {
 
 # Files to ignore when searching for ambiguous build scripts to send to the LLM
 IGNORE_EXTENSIONS = {
-    ".py", ".js", ".ts", ".html", ".css", ".md", ".txt", ".csv", ".json",
+    ".py", ".js", ".ts", ".html", ".css", ".csv", ".json",
     ".png", ".jpg", ".jpeg", ".gif", ".svg", ".ico", ".lock", ".log",
     ".java", ".c", ".cpp", ".h", ".hpp", ".cs", ".go", ".rs", ".rb", ".php",
     ".pdf", ".zip", ".tar", ".gz", ".mp3", ".mp4", ".wav", ".sql"
